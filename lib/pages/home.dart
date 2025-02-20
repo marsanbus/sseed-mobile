@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:sseed/models/feature_model.dart';
+import 'package:sseed/pages/cultivaTuBosque.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,9 +38,17 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 20),
             const IntroSection(),
             const SizedBox(height: 20),
-            const FeatureCard(
-              imagePath: 'assets/icons/feature1.jpg',
-              title: 'Cultiva tu bosque',
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Cultivatubosque()),
+                );
+              },
+              child: const FeatureCard(
+                imagePath: 'assets/icons/feature1.jpg',
+                title: 'Cultiva tu bosque',
+              ),
             ),
             const SizedBox(height: 20),
             const FeatureCard(
