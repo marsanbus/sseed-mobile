@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class ActividadFisica extends StatelessWidget {
-  const ActividadFisica({Key? key}) : super(key: key);
+class SaludCognitiva extends StatelessWidget {
+  const SaludCognitiva({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class ActividadFisica extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Actividad Física'),
+        title: const Text('Salud Cognitiva'),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -32,7 +32,7 @@ class ActividadFisica extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Text(
-              'Actividad Física',
+              'Salud Cognitiva',
               style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,

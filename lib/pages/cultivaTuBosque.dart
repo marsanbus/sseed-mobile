@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:sseed/pages/home.dart';
-import 'package:sseed/pages/actividadFisica.dart'; // Importa la nueva página
-import 'package:sseed/pages/relacionesPositivas.dart';
+import 'package:sseed/pages/pages_retos/actividadFisica.dart'; // Importa la nueva página
+import 'package:sseed/pages/pages_retos/relacionesPositivas.dart';
+import 'package:sseed/pages/pages_retos/emocionesPositivas.dart';
+import 'package:sseed/pages/pages_retos/fortalezasDelCaracter.dart';
+import 'package:sseed/pages/pages_retos/habitosSaludables.dart';
+import 'package:sseed/pages/pages_retos/saludCognitiva.dart';
 
 class Cultivatubosque extends StatelessWidget {
   const Cultivatubosque({Key? key}) : super(key: key);
@@ -50,7 +54,30 @@ class Cultivatubosque extends StatelessWidget {
                             MaterialPageRoute(builder: (context) => const RelacionesPositivas()),
                           );
                         }
-                        // Aquí puedes agregar más condiciones para otras categorías en el futuro
+                        if (categoryTitles[index] == 'Emociones Positivas') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const EmocionesPositivas()),
+                          );
+                        }
+                        if (categoryTitles[index] == 'Fortalezas del Carácter') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const FortalezasDelCaracter()),
+                          );
+                        }
+                        if (categoryTitles[index] == 'Hábitos Saludables') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const HabitosSaludables()),
+                          );
+                        }
+                        if (categoryTitles[index] == 'Salud Cognitiva') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const SaludCognitiva()),
+                          );
+                        }
                       },
                       child: Column(
                         children: [
@@ -94,7 +121,6 @@ class HeaderCultivaSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String currentTime = DateFormat('HH:mm').format(DateTime.now());
 
     return Stack(
       children: [
@@ -117,7 +143,7 @@ class HeaderCultivaSection extends StatelessWidget {
               const Text(
                 'Hola, Ana',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 36,
                   fontWeight: FontWeight.bold,
                 ),
@@ -126,7 +152,7 @@ class HeaderCultivaSection extends StatelessWidget {
               const Text(
                 'Podium Sport',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 18,
                 ),
               ),
@@ -134,15 +160,7 @@ class HeaderCultivaSection extends StatelessWidget {
               Text(
                 today,
                 style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                ),
-              ),
-              const SizedBox(height: 5),
-              Text(
-                currentTime,
-                style: const TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 18,
                 ),
               ),

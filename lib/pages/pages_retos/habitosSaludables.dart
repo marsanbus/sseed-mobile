@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class RelacionesPositivas extends StatelessWidget {
-  const RelacionesPositivas({Key? key}) : super(key: key);
+class HabitosSaludables extends StatelessWidget {
+  const HabitosSaludables({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class RelacionesPositivas extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('relacionesPositivas'),
+        title: const Text('Hábitos Saludables'),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -32,7 +32,7 @@ class RelacionesPositivas extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Text(
-              'relacionesPositivas',
+              'Hábitos Saludables',
               style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
