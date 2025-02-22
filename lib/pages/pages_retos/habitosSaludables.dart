@@ -1,72 +1,66 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:sseed/models/categorias_retos_model.dart';
+import 'package:sseed/pages/pages_retos/retos/habitos_saludables/Hs1.dart';
+import 'package:sseed/pages/pages_retos/retos/habitos_saludables/Hs2.dart';
+import 'package:sseed/pages/pages_retos/retos/habitos_saludables/Hs3.dart';
+import 'package:sseed/pages/pages_retos/retos/habitos_saludables/Hs4.dart';
+import 'package:sseed/pages/pages_retos/retos/habitos_saludables/Hs5.dart';
 
 class HabitosSaludables extends StatelessWidget {
   const HabitosSaludables({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final String today = DateFormat('EEE d MMM', 'es_ES').format(DateTime.now());
-    final String currentTime = DateFormat('HH:mm').format(DateTime.now());
-
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Hábitos Saludables'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const RotatedBox(
-              quarterTurns: -1,
-              child: Text(
-                'RETOS -----',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  letterSpacing: 2.0,
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              'Hábitos Saludables',
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                height: 1.5,
-              ),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              'Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque.',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.black54,
-                height: 1.5,
-              ),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              today,
-              style: const TextStyle(
-                color: Colors.grey,
-                fontSize: 18,
-              ),
-            ),
-            const SizedBox(height: 5),
-            Text(
-              currentTime,
-              style: const TextStyle(
-                color: Colors.grey,
-                fontSize: 18,
-              ),
-            ),
-          ],
-        ),
-      ),
+    return CategoriasRetosModel(
+      title: 'Habitos Saludables',
+      description: 'Las emociones positivas son aquellas que nos hacen sentir bien y nos ayudan a tener una visión más optimista de la vida.',
+      buttons: [
+        {
+          'text': '1. Hs1',
+          'onPressed': () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Hs1Page()),
+            );
+          },
+        },
+        {
+          'text': '2. Hs2',
+          'onPressed': () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Hs2Page()),
+            );
+          },
+        },
+        {
+          'text': '3. Hs3',
+          'onPressed': () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Hs3Page()),
+            );
+          },
+        },
+        {
+          'text': '4. Hs4',
+          'onPressed': () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Hs4Page()),
+            );
+          },
+        },
+        {
+          'text': '5. Hs5',
+          'onPressed': () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Hs5Page()),
+            );
+          },
+        },
+      ],
     );
   }
 }

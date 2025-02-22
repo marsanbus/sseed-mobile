@@ -1,72 +1,66 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:sseed/models/categorias_retos_model.dart';
+import 'package:sseed/pages/pages_retos/retos/fortalezas_del_caracter/fc1.dart';
+import 'package:sseed/pages/pages_retos/retos/fortalezas_del_caracter/fc2.dart';
+import 'package:sseed/pages/pages_retos/retos/fortalezas_del_caracter/fc3.dart';
+import 'package:sseed/pages/pages_retos/retos/fortalezas_del_caracter/fc4.dart';
+import 'package:sseed/pages/pages_retos/retos/fortalezas_del_caracter/fc5.dart';
 
 class FortalezasDelCaracter extends StatelessWidget {
   const FortalezasDelCaracter({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final String today = DateFormat('EEE d MMM', 'es_ES').format(DateTime.now());
-    final String currentTime = DateFormat('HH:mm').format(DateTime.now());
-
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Fortalezas del Carácter'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const RotatedBox(
-              quarterTurns: -1,
-              child: Text(
-                'RETOS -----',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  letterSpacing: 2.0,
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              'Fortalezas del Carácter',
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                height: 1.5,
-              ),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              'Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque.',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.black54,
-                height: 1.5,
-              ),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              today,
-              style: const TextStyle(
-                color: Colors.grey,
-                fontSize: 18,
-              ),
-            ),
-            const SizedBox(height: 5),
-            Text(
-              currentTime,
-              style: const TextStyle(
-                color: Colors.grey,
-                fontSize: 18,
-              ),
-            ),
-          ],
-        ),
-      ),
+    return CategoriasRetosModel(
+      title: 'Fortalezas del Carácter',
+      description: 'Las emociones positivas son aquellas que nos hacen sentir bien y nos ayudan a tener una visión más optimista de la vida.',
+      buttons: [
+        {
+          'text': '1. Fc1',
+          'onPressed': () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Fc1Page()),
+            );
+          },
+        },
+        {
+          'text': '2. Fc2',
+          'onPressed': () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Fc2Page()),
+            );
+          },
+        },
+        {
+          'text': '3. Fc3',
+          'onPressed': () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Fc3Page()),
+            );
+          },
+        },
+        {
+          'text': '4. Fc4',
+          'onPressed': () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Fc4Page()),
+            );
+          },
+        },
+        {
+          'text': '5. Fc5',
+          'onPressed': () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Fc5Page()),
+            );
+          },
+        },
+      ],
     );
   }
 }
