@@ -30,6 +30,7 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: const CustomAppBar(),
+      endDrawer: const CustomDrawer(), // Cambiar a endDrawer aquí
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
@@ -71,6 +72,75 @@ class HomePage extends StatelessWidget {
             const Footer(),
           ],
         ),
+      ),
+    );
+  }
+}
+
+// CUSTOM APP BAR
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const CustomAppBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      backgroundColor: Colors.white,
+      elevation: 0,
+      leading: IconButton(
+        icon: Image.asset('assets/icons/Logotipo_Vertical_Transparente.png'),
+        onPressed: () {
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => const HomePage()),
+            (route) => false,
+          );
+        },
+      ),
+      centerTitle: true,
+      title: const SizedBox.shrink(),
+      actions: [
+        Builder(
+          builder: (context) {
+            return IconButton(
+              icon: SvgPicture.asset('assets/icons/menu-alt-02-svgrepo-com.svg'),
+              onPressed: () {
+                Scaffold.of(context).openEndDrawer();
+              },
+            );
+          },
+        ),
+      ],
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(56.0);
+}
+
+// CUSTOM DRAWER
+class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: const <Widget>[
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: Color(0xFF5a6b47),
+            ),
+            child: Text(
+              'Menú',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+              ),
+            ),
+          ),
+          // Añadir elementos del menú aquí
+        ],
       ),
     );
   }
@@ -181,34 +251,7 @@ class IntroSection extends StatelessWidget {
   }
 }
 
-// CUSTOM APP BAR
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      backgroundColor: Colors.white,
-      elevation: 0,
-      leading: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Image.asset('assets/icons/Logotipo_Vertical_Transparente.png'),
-      ),
-      centerTitle: true,
-      title: const SizedBox.shrink(),
-      actions: [
-        IconButton(
-          icon: SvgPicture.asset('assets/icons/menu-alt-02-svgrepo-com.svg'),
-          onPressed: () {},
-        ),
-      ],
-    );
-  }
-
-  @override
-  Size get preferredSize => const Size.fromHeight(56.0);
-}
-
+// CONNECT SECTION
 class ConnectSection extends StatelessWidget {
   const ConnectSection({Key? key}) : super(key: key);
 
@@ -243,18 +286,16 @@ class ConnectSection extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-
-              Text (
+              const Text(
                 'Chat',
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Colors.black87,
                 ),
                 textAlign: TextAlign.center, // Centrar el título
               ),
-
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Imagen de foro
               ClipRRect(
                 borderRadius: BorderRadius.circular(15.0),
@@ -265,10 +306,9 @@ class ConnectSection extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-
-              Text (
+              const Text(
                 'Foro',
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Colors.black87,
@@ -283,6 +323,7 @@ class ConnectSection extends StatelessWidget {
   }
 }
 
+// FOOTER SECTION
 class Footer extends StatelessWidget {
   const Footer({Key? key}) : super(key: key);
 
@@ -290,7 +331,7 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: Color(0xFF5a6b47), // Fondo verde
+      color: const Color(0xFF5a6b47), // Fondo verde
       padding: const EdgeInsets.all(20.0),
       child: const Text(
         '© 2025 Sembrando Salud',
