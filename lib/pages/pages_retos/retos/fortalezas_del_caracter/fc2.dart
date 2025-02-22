@@ -7,7 +7,7 @@ class Fc2Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RetosModel(
-      title: '2. Fc2',
+      title: '2. Perdón',
       description: 'Descripción de la fortaleza del carácter 2',
       buttonText: 'Empezar Reto',
       onPressed: () {

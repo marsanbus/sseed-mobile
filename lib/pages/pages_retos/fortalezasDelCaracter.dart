@@ -16,7 +16,7 @@ class FortalezasDelCaracter extends StatelessWidget {
       description: 'Las emociones positivas son aquellas que nos hacen sentir bien y nos ayudan a tener una visión más optimista de la vida.',
       buttons: [
         {
-          'text': '1. Fc1',
+          'text': '1. Practica la gratitud',
           'onPressed': () {
             Navigator.push(
               context,
@@ -25,7 +25,7 @@ class FortalezasDelCaracter extends StatelessWidget {
           },
         },
         {
-          'text': '2. Fc2',
+          'text': '2. Perdón',
           'onPressed': () {
             Navigator.push(
               context,
@@ -34,7 +34,7 @@ class FortalezasDelCaracter extends StatelessWidget {
           },
         },
         {
-          'text': '3. Fc3',
+          'text': '3. Perseverancia',
           'onPressed': () {
             Navigator.push(
               context,
@@ -43,7 +43,7 @@ class FortalezasDelCaracter extends StatelessWidget {
           },
         },
         {
-          'text': '4. Fc4',
+          'text': '4. Autorregulación',
           'onPressed': () {
             Navigator.push(
               context,
@@ -52,7 +52,7 @@ class FortalezasDelCaracter extends StatelessWidget {
           },
         },
         {
-          'text': '5. Fc5',
+          'text': '5. Humor',
           'onPressed': () {
             Navigator.push(
               context,
