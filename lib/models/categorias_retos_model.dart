@@ -43,15 +43,16 @@ class CategoriasRetosModel extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Expanded(
-              child: ListView(
-                children: buttons.map((button) {
+              child: ListView.builder(
+                itemCount: buttons.length,
+                itemBuilder: (context, index) {
                   return Column(
                     children: [
-                      _buildButton(context, button['text'], button['onPressed']),
-                      _buildDivider(),
+                      _buildButton(context, buttons[index]['text'], buttons[index]['onPressed']),
+                      if (index < buttons.length - 1) _buildDivider(),
                     ],
                   );
-                }).toList(),
+                },
               ),
             ),
           ],

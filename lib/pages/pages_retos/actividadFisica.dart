@@ -16,7 +16,7 @@ class ActividadFisica extends StatelessWidget {
       description: 'Las emociones positivas son aquellas que nos hacen sentir bien y nos ayudan a tener una visión más optimista de la vida.',
       buttons: [
         {
-          'text': '1. Af1',
+          'text': '1. pasos 10.000',
           'onPressed': () {
             Navigator.push(
               context,
@@ -25,7 +25,7 @@ class ActividadFisica extends StatelessWidget {
           },
         },
         {
-          'text': '2. Af2',
+          'text': '2. subir por las escaleras',
           'onPressed': () {
             Navigator.push(
               context,
