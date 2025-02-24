@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:sseed/pages/home.dart';
 import 'package:sseed/pages/pages_retos/actividadFisica.dart'; // Importa la nueva página
 import 'package:sseed/pages/pages_retos/relacionesPositivas.dart';
 import 'package:sseed/pages/pages_retos/emocionesPositivas.dart';
 import 'package:sseed/pages/pages_retos/fortalezasDelCaracter.dart';
 import 'package:sseed/pages/pages_retos/habitosSaludables.dart';
 import 'package:sseed/pages/pages_retos/saludCognitiva.dart';
+import 'package:sseed/models/custom_app_bar.dart';
+import 'package:sseed/models/footer_section.dart';
 
 class Cultivatubosque extends StatelessWidget {
   const Cultivatubosque({Key? key}) : super(key: key);

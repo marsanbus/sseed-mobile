@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sseed/pages/home.dart';
+import 'package:sseed/models/custom_app_bar.dart';
 
 class CategoriasRetosModel extends StatelessWidget {
   final String title;
