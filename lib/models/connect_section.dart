@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sseed/pages/chat.dart';
+import 'package:sseed/pages/foro.dart';
 
 class ConnectSection extends StatelessWidget {
   const ConnectSection({Key? key}) : super(key: key);
@@ -25,13 +27,21 @@ class ConnectSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               // Imagen de chat
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15.0),
-                child: Image.asset(
-                  'assets/icons/chat.jpg', // Cambia la ruta a la imagen de chat
-                  width: MediaQuery.of(context).size.width * 0.4, // 40% del ancho
-                  height: 150,
-                  fit: BoxFit.cover,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Chat()),
+                  );
+                },
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15.0),
+                  child: Image.asset(
+                    'assets/icons/chat.jpg', // Cambia la ruta a la imagen de chat
+                    width: MediaQuery.of(context).size.width * 0.4, // 40% del ancho
+                    height: 150,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               const Text(
@@ -45,13 +55,21 @@ class ConnectSection extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               // Imagen de foro
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15.0),
-                child: Image.asset(
-                  'assets/icons/foro.jpg', // Cambia la ruta a la imagen del foro
-                  width: MediaQuery.of(context).size.width * 0.4, // 40% del ancho
-                  height: 150,
-                  fit: BoxFit.cover,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Foro()),
+                  );
+                },
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15.0),
+                  child: Image.asset(
+                    'assets/icons/foro.jpg', // Cambia la ruta a la imagen del foro
+                    width: MediaQuery.of(context).size.width * 0.4, // 40% del ancho
+                    height: 150,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               const Text(

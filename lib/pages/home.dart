@@ -9,6 +9,9 @@ import 'package:sseed/models/header_section.dart';
 import 'package:sseed/models/intro_section.dart';
 import 'package:sseed/models/connect_section.dart';
 import 'package:sseed/models/footer_section.dart';
+import 'package:sseed/pages/ejercitaTuMente.dart';
+import 'package:sseed/pages/entrenaEnCasa.dart';
+import 'package:sseed/pages/diarioDeRegistro.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -57,19 +60,43 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            const FeatureCard(
-              imagePath: 'assets/icons/feature2.jpg',
-              title: 'Ejercita Tu Mente',
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context) => const EjercitaTuMente()),
+                );
+              },
+              child:  FeatureCard(
+                imagePath: 'assets/icons/feature2.jpg',
+                title: 'Ejercita Tu Mente',
+              ),
             ),
             const SizedBox(height: 20),
-            const FeatureCard(
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const EntrenaEnCasa()),
+                );
+              },
+              child: const FeatureCard(
               imagePath: 'assets/icons/feature3.jpg',
               title: 'Entrena En Casa',
+              ),
             ),
             const SizedBox(height: 20),
-            const FeatureCard(
-              imagePath: 'assets/icons/feature4.jpg',
-              title: 'Diario De Registro',
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const DiarioDeRegistro()),
+                );
+              },
+              child: const FeatureCard(
+                imagePath: 'assets/icons/feature4.jpg',
+                title: 'Diario de Registro',
+              ),
             ),
             const SizedBox(height: 50),
             const ConnectSection(),
