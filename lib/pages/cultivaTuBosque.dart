@@ -8,6 +8,7 @@ import 'package:sseed/pages/pages_retos/habitosSaludables.dart';
 import 'package:sseed/pages/pages_retos/saludCognitiva.dart';
 import 'package:sseed/models/custom_app_bar.dart';
 import 'package:sseed/models/footer_section.dart';
+import 'package:sseed/models/custom_menu_lateral.dart';
 
 class Cultivatubosque extends StatelessWidget {
   const Cultivatubosque({Key? key}) : super(key: key);
@@ -27,6 +28,7 @@ class Cultivatubosque extends StatelessWidget {
 
     return Scaffold(
       appBar: CustomAppBar(),
+      endDrawer: CustomDrawer(),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
