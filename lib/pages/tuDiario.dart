@@ -35,21 +35,24 @@ class _TuDiarioState extends State<TuDiario> {
 
   @override
   Widget build(BuildContext context) {
+    final dayData = _selectedDay != null ? _dayDataMap[_selectedDay] : null;
+
     return Scaffold(
       appBar: CustomAppBar(),
       endDrawer: CustomDrawer(),
       backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              "Diario de Registro",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+      body: SingleChildScrollView(
+        // Hace que el contenido sea desplazable
+        child: Column(
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                "Diario de Registro",
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
             ),
-          ),
-          Expanded(
-            child: TableCalendar(
+            TableCalendar(
               locale: 'es_ES',
               firstDay: DateTime.utc(2020, 1, 1),
               lastDay: DateTime.utc(2030, 12, 31),
@@ -63,7 +66,6 @@ class _TuDiarioState extends State<TuDiario> {
                   _selectedDay = selectedDay;
                   _focusedDay = focusedDay;
                 });
-                _showDayDetails(selectedDay); // Mostrar detalles del día seleccionado
               },
               onFormatChanged: (format) {
                 setState(() {
@@ -90,21 +92,44 @@ class _TuDiarioState extends State<TuDiario> {
               calendarBuilders: CalendarBuilders(
                 markerBuilder: (context, date, events) {
                   final dayData = _dayDataMap[date];
-                  if (dayData == null) return SizedBox.shrink();
+                  if (dayData == null || dayData.mood == null) return SizedBox.shrink();
 
-                  return Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      if (dayData.mood != null) Text(dayData.mood!),
-                      if (dayData.activities.isNotEmpty)
-                        Text(dayData.activities.join(' ')),
-                    ],
+                  return Positioned(
+                    bottom: 1,
+                    child: Text(dayData.mood!),
                   );
                 },
               ),
             ),
-          ),
-        ],
+            if (_selectedDay != null && dayData != null)
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Detalles del Día",
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 10),
+                    if (dayData.mood != null)
+                      Text("Estado de Ánimo: ${dayData.mood}"),
+                    if (dayData.activities.isNotEmpty)
+                      Text("Actividades: ${dayData.activities.join(', ')}"),
+                    if (dayData.note != null) Text("Nota: ${dayData.note}"),
+                  ],
+                ),
+              ),
+            if (_selectedDay != null)
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: ElevatedButton(
+                  onPressed: () => _showDayDetails(_selectedDay!),
+                  child: Text("Editar Detalles"),
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }
@@ -124,7 +149,7 @@ class _TuDiarioState extends State<TuDiario> {
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context),
-                child: Text("Cerrar"),
+                child: Text("Aceptar"),
               ),
             ],
           );
@@ -139,56 +164,59 @@ class _TuDiarioState extends State<TuDiario> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text("Detalles del Día"),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text("Estado de Ánimo:"),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  IconButton(
-                    onPressed: () => _updateMood(day, '😊'),
-                    icon: Text('😊'),
-                  ),
-                  IconButton(
-                    onPressed: () => _updateMood(day, '😢'),
-                    icon: Text('😢'),
-                  ),
-                  IconButton(
-                    onPressed: () => _updateMood(day, '😡'),
-                    icon: Text('😡'),
-                  ),
-                ],
-              ),
-              Text("Actividades:"),
-              Wrap(
-                spacing: 8.0,
-                children: [
-                  IconButton(
-                    onPressed: () => _addActivity(day, '🏋️'),
-                    icon: Text('🏋️'),
-                  ),
-                  IconButton(
-                    onPressed: () => _addActivity(day, '📚'),
-                    icon: Text('📚'),
-                  ),
-                  IconButton(
-                    onPressed: () => _addActivity(day, '🎮'),
-                    icon: Text('🎮'),
-                  ),
-                ],
-              ),
-              TextField(
-                decoration: InputDecoration(labelText: "Nota"),
-                onChanged: (value) => _updateNote(day, value),
-              ),
-            ],
+          title: Text("Editar Detalles del Día"),
+          content: SingleChildScrollView(
+            // Hace que el contenido del diálogo sea desplazable
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text("Estado de Ánimo:"),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    IconButton(
+                      onPressed: () => _updateMood(day, '😊'),
+                      icon: Text('😊'),
+                    ),
+                    IconButton(
+                      onPressed: () => _updateMood(day, '😢'),
+                      icon: Text('😢'),
+                    ),
+                    IconButton(
+                      onPressed: () => _updateMood(day, '😡'),
+                      icon: Text('😡'),
+                    ),
+                  ],
+                ),
+                Text("Actividades:"),
+                Wrap(
+                  spacing: 8.0,
+                  children: [
+                    IconButton(
+                      onPressed: () => _addActivity(day, '🏋️'),
+                      icon: Text('🏋️'),
+                    ),
+                    IconButton(
+                      onPressed: () => _addActivity(day, '📚'),
+                      icon: Text('📚'),
+                    ),
+                    IconButton(
+                      onPressed: () => _addActivity(day, '🎮'),
+                      icon: Text('🎮'),
+                    ),
+                  ],
+                ),
+                TextField(
+                  decoration: InputDecoration(labelText: "Nota"),
+                  onChanged: (value) => _updateNote(day, value),
+                ),
+              ],
+            ),
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: Text("Cerrar"),
+              child: Text("Aceptar"),
             ),
           ],
         );
@@ -206,7 +234,9 @@ class _TuDiarioState extends State<TuDiario> {
   void _addActivity(DateTime day, String activity) {
     setState(() {
       _dayDataMap[day] ??= DayData();
-      _dayDataMap[day]!.activities.add(activity);
+      if (!_dayDataMap[day]!.activities.contains(activity)) {
+        _dayDataMap[day]!.activities.add(activity);
+      }
     });
   }
 
