@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sseed/models/custom_app_bar.dart';
 import 'package:sseed/models/custom_menu_lateral.dart';
+import 'dart:async';
 
-class RetosModel extends StatelessWidget {
+class RetosModel extends StatefulWidget {
   final String title;
   final String description;
   final String buttonText;
@@ -17,6 +18,49 @@ class RetosModel extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  _RetosModelState createState() => _RetosModelState();
+}
+
+class _RetosModelState extends State<RetosModel> {
+  Duration _duration = Duration(days: 7); // Duración inicial de una semana
+  Timer? _timer;
+  bool _isCounting = false;
+
+  void _startCountdown() {
+    if (_isCounting) return; // Evita iniciar múltiples temporizadores
+
+    setState(() {
+      _isCounting = true;
+    });
+
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      setState(() {
+        if (_duration.inSeconds > 0) {
+          _duration = _duration - Duration(seconds: 1); // Reduce el tiempo
+        } else {
+          _timer?.cancel(); // Detiene el temporizador cuando llega a cero
+          _isCounting = false;
+        }
+      });
+    });
+  }
+
+  String _formatDuration(Duration duration) {
+    String twoDigits(int n) => n.toString().padLeft(2, '0');
+    String days = twoDigits(duration.inDays);
+    String hours = twoDigits(duration.inHours.remainder(24));
+    String minutes = twoDigits(duration.inMinutes.remainder(60));
+    String seconds = twoDigits(duration.inSeconds.remainder(60));
+    return '$days:$hours:$minutes:$seconds'; // Formato días:horas:minutos:segundos
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel(); // Cancela el temporizador al destruir el widget
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(),
@@ -28,7 +72,7 @@ class RetosModel extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              title,
+              widget.title,
               style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -37,7 +81,7 @@ class RetosModel extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Text(
-              description,
+              widget.description,
               style: const TextStyle(
                 fontSize: 16,
                 color: Colors.black54,
@@ -46,20 +90,39 @@ class RetosModel extends StatelessWidget {
             ),
             const Spacer(),
             Center(
-              child: ElevatedButton(
-                onPressed: onPressed,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF5a6b47), // Color de fondo
-                  foregroundColor: Colors.white, // Color del texto
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+              child: Column(
+                children: [
+                  Text(
+                    _formatDuration(_duration), // Muestra la cuenta atrás
+                    style: const TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
                   ),
-                  padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
-                ),
-                child: Text(
-                  buttonText,
-                  style: const TextStyle(fontSize: 18),
-                ),
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      _startCountdown(); // Inicia la cuenta atrás
+                      widget.onPressed(); // Ejecuta la acción personalizada
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF5a6b47), // Color de fondo
+                      foregroundColor: Colors.white, // Color del texto
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 15.0,
+                        horizontal: 30.0,
+                      ),
+                    ),
+                    child: Text(
+                      widget.buttonText,
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                  ),
+                ],
               ),
             ),
             const SizedBox(height: 20),
