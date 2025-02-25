@@ -9,9 +9,9 @@ import 'package:sseed/models/header_section.dart';
 import 'package:sseed/models/intro_section.dart';
 import 'package:sseed/models/connect_section.dart';
 import 'package:sseed/models/footer_section.dart';
-import 'package:sseed/pages/ejercitaTuMente.dart';
-import 'package:sseed/pages/entrenaEnCasa.dart';
-import 'package:sseed/pages/diarioDeRegistro.dart';
+import 'package:sseed/pages/floreceAprendiendo.dart';
+import 'package:sseed/pages/fortaleceTuCuerpo.dart';
+import 'package:sseed/pages/tuDiario.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -64,12 +64,12 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context, 
-                  MaterialPageRoute(builder: (context) => const EjercitaTuMente()),
+                  MaterialPageRoute(builder: (context) => const FloreceAprendiendo()),
                 );
               },
               child:  FeatureCard(
                 imagePath: 'assets/icons/feature2.jpg',
-                title: 'Ejercita Tu Mente',
+                title: 'Florece aprendiendo',
               ),
             ),
             const SizedBox(height: 20),
@@ -77,12 +77,12 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const EntrenaEnCasa()),
+                  MaterialPageRoute(builder: (context) => const FortaleceTuCuerpo()),
                 );
               },
               child: const FeatureCard(
               imagePath: 'assets/icons/feature3.jpg',
-              title: 'Entrena En Casa',
+              title: 'Fortalece tu cuerpo',
               ),
             ),
             const SizedBox(height: 20),
@@ -90,12 +90,12 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const DiarioDeRegistro()),
+                  MaterialPageRoute(builder: (context) => const TuDiario()),
                 );
               },
               child: const FeatureCard(
                 imagePath: 'assets/icons/feature4.jpg',
-                title: 'Diario de Registro',
+                title: 'Tu diario',
               ),
             ),
             const SizedBox(height: 50),

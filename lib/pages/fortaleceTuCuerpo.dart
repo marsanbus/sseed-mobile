@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sseed/models/custom_app_bar.dart';
 import 'package:sseed/models/custom_menu_lateral.dart';
 
-class EntrenaEnCasa extends StatelessWidget {
-  const EntrenaEnCasa({Key? key}) : super(key: key);
+class FortaleceTuCuerpo extends StatelessWidget {
+  const FortaleceTuCuerpo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
