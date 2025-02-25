@@ -1,0 +1,1 @@
+C:\Users\Marcos\Desktop\sseed-mobile\build\app\intermediates\cxx\RelWithDebInfo\2227x626\obj\arm64-v8a
