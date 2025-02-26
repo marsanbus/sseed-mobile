@@ -22,7 +22,7 @@ class RetosModel extends StatefulWidget {
 }
 
 class _RetosModelState extends State<RetosModel> {
-  Duration _duration = Duration(seconds: 5); // Duración inicial de una semana
+  Duration _duration = Duration(days: 7); // Duración inicial de una semana
   Timer? _timer;
   bool _isCounting = false;
   bool _showCounter = false; // Controla la visibilidad del contador
@@ -75,7 +75,7 @@ class _RetosModelState extends State<RetosModel> {
     String hours = twoDigits(duration.inHours.remainder(24));
     String minutes = twoDigits(duration.inMinutes.remainder(60));
     String seconds = twoDigits(duration.inSeconds.remainder(60));
-    return '$days:$hours:$minutes:$seconds'; // Formato días:horas:minutos:segundos
+    return 'Termina en $days días y $hours horas'; // Formato días:horas:minutos:segundos
   }
 
   @override
@@ -120,7 +120,7 @@ class _RetosModelState extends State<RetosModel> {
                     Text(
                       _formatDuration(_duration),
                       style: const TextStyle(
-                        fontSize: 40,
+                        fontSize: 24,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                       ),
