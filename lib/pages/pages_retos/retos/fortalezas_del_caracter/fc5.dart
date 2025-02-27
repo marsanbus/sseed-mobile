@@ -7,8 +7,8 @@ class Fc5Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RetosModel(
-      title: '5. Humor',
-      description: 'Descripción de la fortaleza del carácter 5',
+      title: '5. Personalidad resiliente',
+      description: 'La resiliencia no solo es cómo reaccionamos ante las dificultades, sino cómo entrenamos nuestra mente para enfrentar los retos con fortaleza. Esta semana, dedica unos minutos cada día para trabajar en tres aspectos clave: perseverancia, autocompasión y optimismo. Verás cómo estos aspectos pueden ayudarte a superar las dificultades de manera más efectiva.',
       buttonText: 'Empezar Reto',
       onPressed: () {
         // Acción del botón

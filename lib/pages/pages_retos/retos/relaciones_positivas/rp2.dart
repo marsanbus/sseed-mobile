@@ -7,7 +7,7 @@ class Rp2Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RetosModel(
-      title: '2. Rp2',
+      title: '2. Escucha activa',
       description: 'Descripción de la relacion positiva 2',
       buttonText: 'Empezar Reto',
       onPressed: () {

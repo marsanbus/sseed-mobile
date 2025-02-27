@@ -25,7 +25,7 @@ class FortalezasDelCaracter extends StatelessWidget {
           },
         },
         {
-          'text': '2. Perdón',
+          'text': '2. Reinterpretación positiva',
           'onPressed': () {
             Navigator.push(
               context,
@@ -34,7 +34,7 @@ class FortalezasDelCaracter extends StatelessWidget {
           },
         },
         {
-          'text': '3. Perseverancia',
+          'text': '3. ¡Ríe!',
           'onPressed': () {
             Navigator.push(
               context,
@@ -43,7 +43,7 @@ class FortalezasDelCaracter extends StatelessWidget {
           },
         },
         {
-          'text': '4. Autorregulación',
+          'text': '4. Enfócate en lo que sí puedes controlar',
           'onPressed': () {
             Navigator.push(
               context,
@@ -52,7 +52,7 @@ class FortalezasDelCaracter extends StatelessWidget {
           },
         },
         {
-          'text': '5. Humor',
+          'text': '5. Personalidad resiliente',
           'onPressed': () {
             Navigator.push(
               context,

@@ -7,8 +7,8 @@ class Fc2Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RetosModel(
-      title: '2. Perdón',
-      description: 'Descripción de la fortaleza del carácter 2',
+      title: '2. Reinterpretación positiva',
+      description: 'Las situaciones difíciles pueden ser desafiantes, pero cada una tiene el potencial de enseñarnos algo nuevo. Esta semana, dedica unos minutos al día para reflexionar sobre momentos y eventos que te resulten complicados e intenta cambiar la perspectiva. ',
       buttonText: 'Empezar Reto',
       onPressed: () {
         // Acción del botón

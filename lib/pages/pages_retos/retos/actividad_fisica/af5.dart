@@ -7,7 +7,7 @@ class Af5Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RetosModel(
-      title: '5. Af5',
+      title: '5. Estiramientos matutinos',
       description: 'Descripción de la actividad física 5',
       buttonText: 'Empezar Reto',
       onPressed: () {

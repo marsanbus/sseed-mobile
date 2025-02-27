@@ -7,8 +7,8 @@ class Rp1Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RetosModel(
-      title: '1. Rp1',
-      description: 'Descripción de la relacion positiva 1',
+      title: '1. Cultiva vínculos auténticos',
+      description: 'Según estudios, las conexiones sociales profundas pueden reducir el riesgo de depresión y mejorar la longevidad. Esta semana, busca hacer una conexión auténtica con alguien cercano todos los días. Un simple gesto, una conversación sincera o un apoyo pueden mejorar tus relaciones y tu bienestar.',
       buttonText: 'Empezar Reto',
       onPressed: () {
         // Acción del botón

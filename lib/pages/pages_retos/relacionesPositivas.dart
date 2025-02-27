@@ -16,7 +16,7 @@ class RelacionesPositivas extends StatelessWidget {
       description: 'Las emociones positivas son aquellas que nos hacen sentir bien y nos ayudan a tener una visión más optimista de la vida.',
       buttons: [
         {
-          'text': '1. Rp1',
+          'text': '1. Cultiva vínculos auténticos',
           'onPressed': () {
             Navigator.push(
               context,
@@ -25,7 +25,7 @@ class RelacionesPositivas extends StatelessWidget {
           },
         },
         {
-          'text': '2. Rp2',
+          'text': '2. Escucha activa',
           'onPressed': () {
             Navigator.push(
               context,
@@ -34,7 +34,7 @@ class RelacionesPositivas extends StatelessWidget {
           },
         },
         {
-          'text': '3. Rp3',
+          'text': '3. Empatía',
           'onPressed': () {
             Navigator.push(
               context,
@@ -43,7 +43,7 @@ class RelacionesPositivas extends StatelessWidget {
           },
         },
         {
-          'text': '4. Rp4',
+          'text': '4. Compartir es vivir',
           'onPressed': () {
             Navigator.push(
               context,
@@ -52,7 +52,7 @@ class RelacionesPositivas extends StatelessWidget {
           },
         },
         {
-          'text': '5. Rp5',
+          'text': '5. Cuestión de prioridad',
           'onPressed': () {
             Navigator.push(
               context,

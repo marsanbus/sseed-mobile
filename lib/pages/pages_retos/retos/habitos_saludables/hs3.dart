@@ -7,7 +7,7 @@ class Hs3Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RetosModel(
-      title: '3. Hs3',
+      title: '3. Respiración',
       description: 'Descripción de la hábitos saludables 3',
       buttonText: 'Empezar Reto',
       onPressed: () {

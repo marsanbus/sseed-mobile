@@ -34,7 +34,7 @@ class ActividadFisica extends StatelessWidget {
           },
         },
         {
-          'text': '3. Af3',
+          'text': '3. Levantarse cada x tiempo sentado',
           'onPressed': () {
             Navigator.push(
               context,
@@ -43,7 +43,7 @@ class ActividadFisica extends StatelessWidget {
           },
         },
         {
-          'text': '4. Af4',
+          'text': '4. Compañero de actividad física',
           'onPressed': () {
             Navigator.push(
               context,
@@ -52,7 +52,7 @@ class ActividadFisica extends StatelessWidget {
           },
         },
         {
-          'text': '5. Af5',
+          'text': '5. Estiramientos matutinos',
           'onPressed': () {
             Navigator.push(
               context,

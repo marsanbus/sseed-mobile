@@ -16,7 +16,7 @@ class HabitosSaludables extends StatelessWidget {
       description: 'Las emociones positivas son aquellas que nos hacen sentir bien y nos ayudan a tener una visión más optimista de la vida.',
       buttons: [
         {
-          'text': '1. Hs1',
+          'text': '1. Beber agua',
           'onPressed': () {
             Navigator.push(
               context,
@@ -25,7 +25,7 @@ class HabitosSaludables extends StatelessWidget {
           },
         },
         {
-          'text': '2. Hs2',
+          'text': '2. Sueño y descanso, rutina nocturna',
           'onPressed': () {
             Navigator.push(
               context,
@@ -34,7 +34,7 @@ class HabitosSaludables extends StatelessWidget {
           },
         },
         {
-          'text': '3. Hs3',
+          'text': '3. Respiración',
           'onPressed': () {
             Navigator.push(
               context,
@@ -43,7 +43,7 @@ class HabitosSaludables extends StatelessWidget {
           },
         },
         {
-          'text': '4. Hs4',
+          'text': '4. Atención plena en la alimentación',
           'onPressed': () {
             Navigator.push(
               context,
@@ -52,7 +52,7 @@ class HabitosSaludables extends StatelessWidget {
           },
         },
         {
-          'text': '5. Hs5',
+          'text': '5. Tiempo al aire libre',
           'onPressed': () {
             Navigator.push(
               context,

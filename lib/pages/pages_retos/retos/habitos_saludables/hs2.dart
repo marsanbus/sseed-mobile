@@ -7,7 +7,7 @@ class Hs2Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RetosModel(
-      title: '2. Hs2',
+      title: '2. Sueño y descanso, rutina nocturna ',
       description: 'Descripción de la hábitos saludables 2',
       buttonText: 'Empezar Reto',
       onPressed: () {

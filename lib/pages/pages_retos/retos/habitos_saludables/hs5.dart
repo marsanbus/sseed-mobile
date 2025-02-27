@@ -7,7 +7,7 @@ class Hs5Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RetosModel(
-      title: '5. Hs5',
+      title: '5. Tiempo al aire libre',
       description: 'Descripción de la hábitos saludables 5',
       buttonText: 'Empezar Reto',
       onPressed: () {

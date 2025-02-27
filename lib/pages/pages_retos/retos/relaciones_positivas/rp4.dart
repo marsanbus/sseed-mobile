@@ -7,8 +7,8 @@ class Rp4Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RetosModel(
-      title: '4. Rp4',
-      description: 'Descripción de la relacion positiva 4',
+      title: '4. Compartir es vivir',
+      description: 'Las relaciones profundas no se basan en lo material, sino en compartir lo que somos: nuestros pensamientos, sentimientos, inquietudes y sueños. Múltiples estudios han demostrado que fortalece los lazos emocionales y crea vínculos más genuinos, así que esta semana intenta compartir tu yo más personal y auténtico con las personas que más te importan.',
       buttonText: 'Empezar Reto',
       onPressed: () {
         // Acción del botón
