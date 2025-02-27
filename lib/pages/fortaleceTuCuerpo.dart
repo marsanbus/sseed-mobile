@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sseed/models/custom_app_bar.dart';
 import 'package:sseed/models/custom_menu_lateral.dart';
-import 'package:sseed/pages/pages_retos/ftcConPrescripcion.dart';
-import 'package:sseed/pages/pages_retos/ftcSinPrescripcion.dart';
+import 'package:sseed/pages/pages_retos/pages_fortalezasc/ftcConPrescripcion.dart';
+import 'package:sseed/pages/pages_retos/pages_fortalezasc/ftcSinPrescripcion.dart';
 
 class FortaleceTuCuerpo extends StatelessWidget {
   const FortaleceTuCuerpo({Key? key}) : super(key: key);
