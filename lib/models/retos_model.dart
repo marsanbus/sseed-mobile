@@ -120,7 +120,7 @@ class _RetosModelState extends State<RetosModel> {
                     Text(
                       _formatDuration(_duration),
                       style: const TextStyle(
-                        fontSize: 24,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                       ),
