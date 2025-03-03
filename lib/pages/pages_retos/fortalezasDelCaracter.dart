@@ -12,7 +12,7 @@ class FortalezasDelCaracter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CategoriasRetosModel(
-      title: 'Fortalezas del Carácter',
+      title: 'Fortalezas del carácter',
       description: 'Las emociones positivas son aquellas que nos hacen sentir bien y nos ayudan a tener una visión más optimista de la vida.',
       buttons: [
         {

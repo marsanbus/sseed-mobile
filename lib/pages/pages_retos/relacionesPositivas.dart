@@ -12,7 +12,7 @@ class RelacionesPositivas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CategoriasRetosModel(
-      title: 'Relaciones Positivas',
+      title: 'Relaciones positivas',
       description: 'Las emociones positivas son aquellas que nos hacen sentir bien y nos ayudan a tener una visión más optimista de la vida.',
       buttons: [
         {

@@ -18,12 +18,12 @@ class Cultivatubosque extends StatelessWidget {
     final String today = DateFormat('EEE d MMM', 'es_ES').format(DateTime.now());
 
     final List<String> categoryTitles = [
-      'Actividad Física',
-      'Relaciones Positivas',
-      'Emociones Positivas',
-      'Fortalezas del Carácter',
-      'Hábitos Saludables',
-      'Salud Cognitiva'
+      'Actividad física',
+      'Relaciones positivas',
+      'Emociones positivas',
+      'Fortalezas del carácter',
+      'Hábitos saludables',
+      'Salud cognitiva'
     ];
 
     return Scaffold(
@@ -45,37 +45,37 @@ class Cultivatubosque extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: GestureDetector(
                       onTap: () {
-                        if (categoryTitles[index] == 'Actividad Física') {
+                        if (categoryTitles[index] == 'Actividad física') {
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => const ActividadFisica()),
                           );
                         }
-                        if (categoryTitles[index] == 'Relaciones Positivas') {
+                        if (categoryTitles[index] == 'Relaciones positivas') {
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => const RelacionesPositivas()),
                           );
                         }
-                        if (categoryTitles[index] == 'Emociones Positivas') {
+                        if (categoryTitles[index] == 'Emociones positivas') {
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => const EmocionesPositivas()),
                           );
                         }
-                        if (categoryTitles[index] == 'Fortalezas del Carácter') {
+                        if (categoryTitles[index] == 'Fortalezas del carácter') {
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => const FortalezasDelCaracter()),
                           );
                         }
-                        if (categoryTitles[index] == 'Hábitos Saludables') {
+                        if (categoryTitles[index] == 'Hábitos saludables') {
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => const HabitosSaludables()),
                           );
                         }
-                        if (categoryTitles[index] == 'Salud Cognitiva') {
+                        if (categoryTitles[index] == 'Salud cognitiva') {
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => const SaludCognitiva()),
@@ -199,7 +199,7 @@ class IntroCultivaSection extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           Text(
-            'Cultiva Tu Bosque',
+            'Cultiva tu bosque',
             style: const TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,

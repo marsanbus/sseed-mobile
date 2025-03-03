@@ -12,7 +12,7 @@ class SaludCognitiva extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CategoriasRetosModel(
-      title: 'Salud Cognitiva',
+      title: 'Salud cognitiva',
       description: 'Las emociones positivas son aquellas que nos hacen sentir bien y nos ayudan a tener una visión más optimista de la vida.',
       buttons: [
         {

@@ -12,7 +12,7 @@ class ActividadFisica extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CategoriasRetosModel(
-      title: 'Actividad Física',
+      title: 'Actividad física',
       description: 'Las emociones positivas son aquellas que nos hacen sentir bien y nos ayudan a tener una visión más optimista de la vida.',
       buttons: [
         {

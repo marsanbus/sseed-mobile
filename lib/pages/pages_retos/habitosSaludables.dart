@@ -12,7 +12,7 @@ class HabitosSaludables extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CategoriasRetosModel(
-      title: 'Habitos Saludables',
+      title: 'Habitos saludables',
       description: 'Las emociones positivas son aquellas que nos hacen sentir bien y nos ayudan a tener una visión más optimista de la vida.',
       buttons: [
         {
